@@ -3,3 +3,5 @@ build/
 *.egg-info/
 mxexec
 mxexec.1
+.*.sw?
+*.pyc
