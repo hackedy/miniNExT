@@ -60,6 +60,8 @@ class QuaggaService(Service):
         # Initialize log directory
         _, err, ret = node.pexec("mkdir /var/log/quagga")
         _, err, ret = node.pexec("chown quagga:quagga /var/log/quagga")
+        # Enable ip forwarding
+        _, err, ret = node.pexec("sysctl -w net.ipv4.ip_forward=1")
 
     def getDefaultGlobalParams(self):
         "Returns the default parameters for this service"
